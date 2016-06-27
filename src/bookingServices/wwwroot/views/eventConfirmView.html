@@ -1,0 +1,64 @@
+<div class="row">
+    <form novalidate name="confirmEvent" ng-submit="vm.confirmBooking()">
+        <div class="col-md-6">
+            <h3>Please fulfill all the fields below</h3>
+
+
+            <div class="form-group">
+                <label>Name</label>
+                <span class="text-danger" ng-show="confirmEvent.name.$error.required">*</span>
+                <input class="form-control" id="name" name="name" ng-model="vm.booking.name" required />
+            </div>
+
+            <div class="form-group">
+                <label>Age</label>
+                <span class="text-danger" ng-show="confirmEvent.age.$error.required">*</span>
+                <input type="number" min="12" max="120" class="form-control" id="age" name="age" ng-model="vm.booking.age" required />
+            </div>
+
+            <div class="form-group">
+                <label>Gender</label>
+                <span class="text-danger" ng-show="confirmEvent.gender.$error.required">*</span>
+                <select id="gender" name="gender" class="form-control" ng-model="vm.booking.gender" required>
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Weight ({{ vm.booking.weight }}cm)</label>
+                <span class="text-danger" ng-show="confirmEvent.weight.$error.required">*</span>
+                <input type="range" min="120" max="240" class="form-control" id="weight" name="weight" ng-model="vm.booking.weight" required />
+            </div>
+
+            <div class="form-group">
+
+                <label>Chronic Health Problems</label>
+                <br />
+                <md-input-container>
+                    <label>Select from the list below</label>
+                    <md-select ng-model="vm.booking.healthProblems"
+                               data-md-container-class="selectdemoSelectHeader"
+                               multiple>
+                        <md-optgroup label="Health Problems">
+                            <md-option ng-value="healthProblem.id" ng-repeat="healthProblem in vm.healthProblems">{{ healthProblem.description }}</md-option>
+                        </md-optgroup>
+                    </md-select>
+                </md-input-container>
+            </div>
+
+
+        </div>
+        <div class="col-md-6">
+            <h3>Select the date</h3>
+            <label>Available during August in the dates below</label>
+            <span class="text-danger" ng-show="confirmEvent.bookingDate.$error.required">*</span>
+            <br />
+            <md-datepicker id="bookingDate" name="bookingDate" ng-model="vm.booking.chosenDate" md-placeholder="Enter date" md-min-date="vm.minDate" md-max-date="vm.maxDate"
+                           md-date-filter="vm.validateDatePredicate" required></md-datepicker>
+        </div>
+        <div class="col-md-12">
+            <p><div><input type="submit" value="Confirm" class="btn btn-success" ng-disabled="confirmEvent.$invalid" /></div></p>
+        </div>
+    </form>
+</div>

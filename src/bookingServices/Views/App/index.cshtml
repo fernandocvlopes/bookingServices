@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Easebooking Assignment</title>
+
+    <link rel="stylesheet" href="css/site.css" />
+    <link rel="stylesheet" href="lib/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="lib/css/angular-material.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header clearfix">
+            <h3 class="text-muted">Easebooking Assignment</h3>
+        </div>
+
+        <div id="main" class="jumbotron" ng-app="app-booking">
+            <div ng-view></div>
+        </div>
+
+
+        <footer class="footer">
+            <p>Fernando Lopes - fernando.cv.lopes@gmail.com</p>
+        </footer>
+
+    </div>
+
+    <script type="text/javascript" src="lib/js/angular.min.js"></script>
+    <script type="text/javascript" src="lib/js/angular-route.min.js"></script>
+    <script type="text/javascript" src="lib/js/angular-animate.min.js"></script>
+    <script type="text/javascript" src="lib/js/angular-aria.min.js"></script>
+    <script type="text/javascript" src="lib/js/angular-messages.min.js"></script>
+    <script type="text/javascript" src="lib/js/angular-material.min.js"></script>
+
+    <script type="text/javascript" src="js/app-booking.js"></script>
+    <script type="text/javascript" src="js/eventController.js"></script>
+    <script type="text/javascript" src="js/eventConfirmController.js"></script>
+</body>
+</html>

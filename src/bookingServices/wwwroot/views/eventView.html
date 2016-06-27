@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="col-md-12">
+        <h1>{{ vm.event.name }}</h1>
+        <h4>{{ vm.event.location }}</h4>
+    </div>
+    <div class="col-md-9">
+        <img ng-src="{{ vm.event.photo }}" alt="{{ vm.event.name }}" height="400" width="600" >
+    </div>
+    <div class="col-md-3">
+        <p>$ {{ vm.event.price }}</p>
+        <p><a class="btn btn-lg btn-success" ng-href="#/confirm/{{ vm.event.key }}">Buy</a></p>
+    </div>
+    <div class="col-md-12">
+        <br> Description: {{ vm.event.description }}
+    </div>
+</div>
